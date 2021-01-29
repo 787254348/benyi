@@ -1,0 +1,153 @@
+.top{
+  background:#40E0D0;
+  padding:20rpx 0;
+}
+
+.money{
+  margin:10rpx auto;
+  width:250rpx;
+  height:250rpx;
+  border:6rpx solid #ff7200;
+  text-align:center;
+  border-radius:50%;
+  color:#ff7200;
+}
+
+.m-t{
+  font-size:100rpx;
+  height:100rpx;
+  margin-top:40rpx;
+}
+
+.m-b{
+  font-size:36rpx;
+  height:100rpx;
+  line-height:120rpx;
+}
+
+.title{
+  width:90%;
+  display:block;
+  margin:0 auto;
+  color:#fff;
+  font-size:38rpx;
+  text-align:center;
+}
+
+.introduce{
+  width:90%;
+  display:block;
+  margin:0 auto;
+  color:#fff;
+  font-size:30rpx;
+  text-align:justify;
+}
+
+.lb {
+  margin-top: 30rpx;
+  width:90%;
+  margin-left:5%;
+  color: #888;
+  font-size: 28rpx;
+  border-bottom: 4rpx solid #eee;
+  padding-bottom: 18rpx;
+}
+
+.content {
+  width: 100%;
+  line-height: 40rpx;
+  border-bottom:6rpx solid #ddd;
+  margin-bottom:20rpx;
+  padding-bottom:10rpx;
+}
+
+.down {
+  font-size: 76rpx;
+  margin-right: 30rpx;
+  margin-left: 70rpx;
+  color: #888;
+}
+
+.add {
+  font-size: 76rpx;
+  margin-left: 30rpx;
+  color: #888;
+}
+
+.number {
+  border: 1rpx solid #ccc;
+  width: 60rpx;
+  display: inline-block;
+  text-align: center;
+  color: #888;
+}
+
+.total {
+  margin-left: 50rpx;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+
+.text {
+  position: relative;
+  top: -12rpx;
+  color: #888;
+}
+
+.shouquan {
+  text-align: center;
+  background: #eee;
+  height: 32px;
+  line-height: 32px;
+  border: 1rpx solid #093;
+  color: #093;
+  border-radius: 10rpx;
+  width: 96%;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.btn-area {
+  background-color: #318000;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 96%;
+}
+
+.bottom{
+  text-align:center;
+  font-size:28rpx;
+  color:#888;
+  margin:20rpx 0;
+}
+
+.d{
+  display:inline-block;
+  margin-left:10rpx;
+  background:#009933;
+  color:#fff;
+  border-radius:16rpx;
+  width:216rpx;
+  text-align:center;
+}
+
+.wrap{
+  display:flex;
+  width:100%;
+  flex:wrap;
+  border-bottom:10rpx solid #eee;
+  padding-top:10rpx;
+  padding-bottom:10rpx;
+}
+
+.wrap navigator{
+  width:calc(30% - 4px);
+  margin-left:2.5%;
+  border:4rpx solid #009933;
+  color:#009933;
+  text-align:center;
+  font-size:36rpx;
+  line-height:70rpx;
+}

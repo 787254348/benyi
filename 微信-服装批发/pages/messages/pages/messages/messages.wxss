@@ -1,0 +1,77 @@
+.con {
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1rpx solid #eaeaea;
+  overflow: hidden;
+}
+
+.left {
+  float: left;
+  width: 40rpx;
+  height: 66rpx;
+  margin-left: 20rpx;
+  padding-right: 10rpx;
+  background-image: url('https://wap.goods100.com/uploads/xcx/03.png');
+  background-size: 100% auto;
+}
+
+.right {
+  float: left;
+  width: 620rpx;
+  padding-left: 20rpx;
+  height: auto;
+}
+
+.name {
+  padding-top: 18rpx;
+  display: block;
+  width: 100%;
+  height: 60rpx;
+  color: #596a91;
+}
+
+.words {
+  width: 100%;
+  height: auto;
+  color: #333;
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 12px;
+}
+
+.time {
+  display: inline;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #afafaf;
+}
+
+.text {
+  display: inline;
+  color: #ccc;
+  font-size: 15px;
+}
+
+.title {
+  color: blue;
+}
+
+.reply {
+  display: inline;
+  margin-left: 285rpx;
+  color: blue;
+  font-weight: 800;
+}
+
+.img {
+  height: 40rpx;
+  width: 48rpx;
+  float: right;
+  margin-top: 6px;
+  margin-right: 12px;
+}

@@ -1,0 +1,31 @@
+.content {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.home {
+  position: fixed;
+  top: 10rpx;
+  right: 20rpx;
+  z-index: 4;
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+
+.leimu {
+  margin-top: 26rpx;
+}
+
+.leimu textarea {
+  border: 1px solid #ccc;
+  margin-left: 10rpx;
+  width: 97%;
+}
+
+.btn-area {
+  background-color: #318000;
+  margin-top: 10rpx;
+  color: #fff;
+}

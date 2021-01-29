@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "share-modal": "/component/share/shareModal"
+  }
+}

@@ -1,0 +1,103 @@
+.page{
+  width:96%;
+  margin-left:2%;
+}
+.body{
+  margin-top:20rpx;
+  box-shadow:0rpx 0rpx 40rpx #666;
+}
+.top{
+  text-align: center;
+  line-height: 60rpx;
+  border-bottom:1rpx solid #ccc;
+  padding-bottom:20rpx;
+}
+.content{
+  margin-left:20rpx;
+  line-height:80rpx;
+  margin-top:20rpx;
+  margin-right:20rpx;
+}
+.address{
+  line-height:46rpx;
+}
+.content text{
+  color:#666;
+  font-size:32rpx;
+}
+.yewu{
+  color:#009933;
+  border-bottom:6rpx solid #009933;
+  font-weight:600;
+}
+.yewu view{
+  font-size:32rpx;
+  height:36rpx;
+  overflow:hidden;
+  line-height:36rpx;
+}
+.introduce{
+  line-height:60rpx;
+  margin-right:20rpx;
+  font-size:32rpx;
+  color:#666;
+}
+.right {
+  float: right;
+  font-size: 36rpx;
+  color: #999;
+}
+.btn{
+  background-color:#009933;
+  margin-top:20rpx;
+  width:48%;
+  color:#fff;
+  float:left;
+  height:92rpx;
+  line-height:92rpx;
+}
+
+.save{
+  width:48%;
+  height:92rpx;
+  background:#009933;
+  color:#fff;
+  margin-top:20rpx;
+  line-height:92rpx;
+  text-align:center;
+  border-radius:10rpx;
+  margin-left:52%;
+}
+
+.make{
+  height:90rpx;
+  line-height:90rpx;
+  width:calc(100% - 6px);
+  text-align:center;
+  border:6rpx solid #009933;
+  border-radius:10rpx;
+  color:#009933;
+  margin-top:20rpx;
+}
+
+.img{
+  width:300rpx;
+  height:300rpx;
+}
+
+.nav navigator{
+  width:calc(22.5% - 2px);
+  margin-left:2%;
+  height:60rpx;
+  line-height:60rpx;
+  margin-top:20rpx;
+}
+
+.c {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #999;
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}

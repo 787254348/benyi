@@ -1,0 +1,20 @@
+/* pages/CompanyProfile/CompanyProfile.wxss */
+
+.title {
+  margin-left: 3%;
+  margin-top: 50rpx;
+}
+
+.introduce {
+  border: 1rpx solid #ccc;
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 26rpx;
+}
+
+.btn-area {
+  background-color: #318000;
+  margin-top: 13px;
+  color: #fff;
+  width: 94%;
+}

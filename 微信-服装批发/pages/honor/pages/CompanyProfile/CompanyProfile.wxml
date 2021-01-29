@@ -1,0 +1,8 @@
+<!--pages/CompanyProfile/CompanyProfile.wxml-->
+<form bindsubmit="formSubmit">
+  <input type="hidden" name="uid" value="{{storage}}" style="display:none"  /> 
+  <input type="hidden" name="username" value="{{username}}" style="display:none"  /> 
+  <view class="title">公司介绍:  </view>
+  <textarea class="introduce" name="content" maxlength="-1" placeholder="详细展示您的公司资质实力，可从别处复制粘贴过来哦。"  />
+  <button class="btn-area"  formType="submit" >确认提交</button>
+</form>

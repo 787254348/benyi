@@ -1,0 +1,21 @@
+<import src="../../../../templet.wxml" />
+<template is="nav" />
+<form name='pushMsgFm' bindsubmit="formSubmit" report-submit>
+  <input type="hidden" name="username" value="{{options.username}}" style="display:none" />
+  <input type="hidden" name="uid" value="{{options.uid}}" style="display:none" />
+  <input type="hidden" name="openid" value="{{options.openid}}" style="display:none" />
+  <input type="hidden" style="display:none;" name="title" value="{{options.title}}" />
+  <view class="content">
+    内容:
+    <textarea  placeholder-style="color:#ccc;" name="content" maxlength="-1" placeholder="请详细描述你的需求" />
+  </view>
+  <view>
+    <view>
+      <view class="contact">联系方式:
+        <input maxlength="11" type="number" name="mobile" />
+      </view>
+    </view>
+    <button class="btn-area"  formType="submit">发送询价</button>
+  </view>
+</form>
+<ad style="margin-top:20rpx" unit-id="adunit-b3a4a82a4369488d"></ad> 

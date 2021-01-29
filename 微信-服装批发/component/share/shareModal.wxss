@@ -1,0 +1,58 @@
+/* component/share/shareModal.wxss */
+
+.modal {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.modal-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 97;
+  background-color: rgba(0, 0, 0, 0.60);
+}
+
+.modal-layer-sm {
+  width: 60%;
+  transform: translate3d(-50%, -50%, 0);
+  left: 50%;
+}
+
+.modal-layer-md {
+  width: 80%;
+  transform: translate3d(-50%, -50%, 0);
+  left: 50%;
+}
+
+.modal-layer-full {
+  width: 100%;
+  left: 0;
+}
+
+.modal-layer {
+  position: absolute;
+  background: transparent;
+  top: 67%;
+  display: flex;
+  flex-direction: column;
+  z-index: 98;
+}
+
+.modal-body {
+  flex: 1;
+}
+
+.modal-icon{
+  width: 20rpx;
+  position: absolute;
+  top:50%;
+  left: 85%;
+  z-index: 100;
+}

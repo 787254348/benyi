@@ -1,0 +1,167 @@
+.top {
+  height: 84rpx;
+  background-color: #feeede;
+  padding-bottom: 10rpx;
+}
+
+/*商品goods*/
+
+.goods {
+  overflow: hidden;
+}
+
+.goods-box {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 375rpx;
+  border-bottom: 4px solid #eee;
+}
+
+.goods-box::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  border-right: 4px solid #eee;
+  content: " ";
+}
+
+.goods-box:nth-child(2n)::after{
+  border-right:none;
+}
+
+.gds-img {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 14rpx 34rpx;
+  opacity: 1;   
+  /* transition: opacity 0.5s linear 1s; */
+}
+
+.loaded{
+  opacity: 1;
+}
+
+.goods-box .gds-title {
+  font-size: 24rpx;
+  height: 30rpx;
+  padding: 0 12rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.text-ico {
+  color: #093;
+  border: 2rpx solid #093;
+  width: 60rpx;
+  font-size: 20rpx;
+  float: left;
+  margin-top: -68rpx;
+  margin-left: 34rpx;
+  line-height: 20rpx;
+  height: 20rpx;
+  padding-top: 6rpx;
+}
+
+/*更多more*/
+
+.more {
+  display: block;
+  margin: 50rpx auto;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.more .more-title {
+  display: block;
+}
+
+.money {
+  color: #0a0;
+  font-size: 28rpx;
+  margin-left: 34rpx;
+}
+
+.price {
+  width: 77px;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 28rpx;
+  position: relative;
+  top: 7rpx;
+}
+
+.vip {
+  height: 32rpx;
+  width: 98rpx;
+  line-height: 40rpx;
+  margin-right: 38rpx;
+  float: right;
+  margin-top: -40rpx;
+}
+
+.reply {
+  background-color: #093;
+  color: #fff;
+  width: 373rpx;
+  margin-left: 173rpx;
+  box-shadow: 10rpx 10rpx 3rpx #ccc;
+  border-radius: 30rpx;
+  margin-top: 10rpx;
+}
+
+.rsearch {
+  border: 1rpx solid #093; 
+  width:80%;
+  border-radius:10rpx;
+  height: 50rpx;
+  float: left;
+  padding-left: 10rpx;
+  font-weight: 900;
+  color: #999;
+  background-color: #fff;
+  margin-top: 10rpx;
+  vertical-align: middle;
+  line-height: 50rpx;
+  min-height: 50rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.b {
+  background-color: #fff;
+  width: 10%;
+  height:49rpx;
+  border-radius: 0 10rpx 10rpx 0;
+  padding-left: 20rpx;
+  line-height: 66rpx;
+  float:right;
+  margin-top:-51rpx;
+  margin-right:5%;
+  z-index:999;
+}
+
+.solo {
+  float: left;
+  line-height: 70rpx;
+  color: #093;
+  font-family: LiSu;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  font-weight: 900;
+  font-size: 44rpx;
+}
+
+.tishi {
+  margin-top: 300rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+}

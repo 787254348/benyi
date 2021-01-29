@@ -1,0 +1,87 @@
+/* pages/myhonor/myhonor.wxss */
+
+.title {
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: 700;
+}
+
+.vip {
+  width: 100rpx;
+  height: 32rpx;
+}
+
+.text {
+  display: inline-block;
+  width: 340rpx;
+  color: #666;
+}
+
+.honor {
+  display: inline-block;
+  color: #093;
+}
+
+.content {
+  margin-top: 40rpx;
+  padding-left: 30rpx;
+  border-bottom: 2rpx solid #eee;
+  padding-bottom: 10rpx;
+}
+
+.company {
+  display: inline-block;
+  color: #093;
+}
+
+.home {
+  position: fixed;
+  top: 40rpx;
+  right: 50rpx;
+  z-index: 4;
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+}
+
+.success {
+  margin-right: 20rpx;
+  position: relative;
+  top: 6rpx;
+}
+
+.introduce {
+  padding-left: 30rpx;
+  margin-top: 44rpx;
+  padding-right: 30rpx;
+  border-top: 10rpx solid #eee;
+}
+
+.txt {
+  word-wrap: break-word;
+}
+
+.btn {
+  background-color: #6c6;
+  margin-left: 2%;
+  width: 96%;
+  margin-top: 20rpx;
+}
+
+.c {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #999;
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}
+
+.fb {
+  text-align: center;
+  margin-top: 60rpx;
+  color: #093;
+  font-weight: 900;
+}

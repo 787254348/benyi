@@ -1,0 +1,26 @@
+<!--pages/honor/honor.wxml-->
+<form bindsubmit="formSubmit">
+  <input type="hidden" name="uid" value="{{storage}}" style="display:none;" />
+  <input type="hidden" name="imgUrl1" value="{{imgUrl1}}" style="display:none;" />
+  <input type="hidden" name="name" value="{{array[index]}}" style="display:none;" />
+  <view class="top">
+    <text class="title">证书名称:  </text>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        {{array[index]}}
+        <text style="margin-left:134rpx;">{{right}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class="top">
+    <text class="title">公司名称:  </text>
+    <input class="content" name="company" placeholder="与营业执照一致" value="" placeholder-style="color:#999999;font-size:30rpx;line-height:80rpx" />
+  </view>
+  <view class="bottom">
+    <text class="title">证书图片:  </text>
+    <button class="btn" style="display:{{botton}}" bindtap="chooseimage">+</button>
+    <image class="btn" style="display:{{img}};margin-left:180rpx;" src="{{a}}" />
+    <icon class="cancel" style="display:{{img}}" type="cancel" size="20" color="red" bindtap="delete1" />
+  </view>
+  <button class="btn-area" formType="submit">确认</button>
+</form>

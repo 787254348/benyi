@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "服装采购信息-本衣服装采购",
+    "usingComponents": {
+      "share-modal": "/component/share/shareModal"
+    }
+}

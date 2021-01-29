@@ -1,0 +1,40 @@
+<template name="nav">
+  <view class="nav">
+    <navigator open-type="switchTab" style='width:30%' url="/pages/tabBar/home/home">首页</navigator>
+    <navigator open-type="switchTab" style='width:30%' url="/pages/tabBar/me/me">个人中心</navigator>
+    <navigator open-type="switchTab" style='width:30%' url="/pages/tabBar/buy/buy">求购信息</navigator>
+    <navigator style="background:#009933;color:#fff;border-radius:10rpx;width:46.5%" open-type="reLaunch" url="/pages/tabBar/ksfb/ksfb?r=1">
+      <view>发布供应</view>
+      <view style='position:absolute;top: 85rpx;'>
+        <view class="tem-opacity"></view>
+        <view class='tem-text'>看视频解锁发供应</view>
+        <image src='/image/lock.png' class='tem-lock'></image>
+      </view>
+    </navigator>
+    <navigator open-type="reLaunch" style='width:46.5%' url="/pages/tabBar/mybuy/mybuy?r=1">
+      <view>发布求购</view>
+      <view style='position:absolute;top: 85rpx;'>
+        <view class="tem-opacity"></view>
+        <view class='tem-text'>看视频解锁发求购</view>
+        <image src='/image/lock.png' class='tem-lock'></image>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+<template name="miniProgram">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx1a664e0d81cf5f16" path="" extra-data="" version="release" class="view-cell" style="border-top:20rpx solid #eeeeee">
+    <view class="view-cell-primary">
+      <image class="view-img" style="border-radius:50%;" src="/image/zst.png" />
+      <text class="view-name">招商加盟信息发布平台</text>
+      <text class="right">></text>
+    </view>
+  </navigator>
+  <navigator target="miniProgram" open-type="navigate" app-id="wx5e84d3e0b9a49a3e" path="" extra-data="" version="release" class="view-cell">
+    <view class="view-cell-primary">
+      <image class="view-img" style="border-radius:50%;" src="/image/8.png" />
+      <text class="view-name">电子请柬贺卡<text style="color:#009933;font-size:24rpx">[在线制作请柬贺卡邀请函]</text></text>
+      <text class="right">></text>
+    </view>
+  </navigator>
+</template>

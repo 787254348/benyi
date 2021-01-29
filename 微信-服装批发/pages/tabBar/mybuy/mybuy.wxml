@@ -1,0 +1,43 @@
+<form bindsubmit="formSubmit" report-submit>
+  <input type="hidden" name="openid" value="{{openid}}" style="display:none;" />
+  <input type="hidden" name="uid" value="{{storage}}" style="display:none;" />
+  <input type="hidden" name="address" value="{{province}}{{city}}{{district}}" style="display:none;" />
+  <block wx:for="{{ss}}" wx:for-index="k" wx:key="*this" >
+    <input type="hidden" name="imgUrl{{k+1}}" value="{{ss[k]}}" style="display:none;" />
+  </block>
+  <input type="hidden" name="province" value="{{province}}" style="display:none;" />
+  <view class="con">
+    <view class="title">
+      <view class="words">标题：</view>
+      <view class="words word1 ">
+        <input name="title"  maxlength="18" placeholder="18个字以内,发布您的采购需求！" />
+      </view>
+    </view>
+    <view class="reques">需求说明:</view>
+    <view class="arr">
+      <textarea class="detial" name="content" maxlength="-1" placeholder="请描述具体要求,让优质的供应商找到你（仅可发采购，供应请移步发供应，否则被删，感谢您配合！）" placeholder-style='color: #999;' />
+    </view>
+  </view>
+
+  <view class="contact">
+    <view class="tel">联系方式:</view>
+    <input class="qian" name="mobile" maxlength="11" type="number"  cursor-spacing="100" />
+  </view>
+  <view style="padding-left:5%">
+    <block class="tupain" wx:for="{{a}}" wx:for-index="k" wx:key="*this">
+      <image class="img" src="{{a[k]}}" />
+      <view class="delete" plain="true" bindtap="delete1" data-name="{{k}}" style="border:none"></view>
+    </block>
+    <button class="btn"  bindtap="chooseimage">+</button>
+  </view>
+  <view class="btn-area">
+    <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可发布！</button>
+    <button class="sub" formType="submit" >确认发布</button>
+    <view style="text-align:center;margin-top:10rpx">发布成功
+      <text style="color:#009933;font-weight:800;">8</text>分钟后求购信息页可看到</view>
+  </view>
+</form>
+<view class="ad">
+    <ad unit-id="adunit-b3a4a82a4369488d"></ad> 
+</view>
+<view class="c"> © 2018 本衣网络</view>

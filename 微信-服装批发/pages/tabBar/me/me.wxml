@@ -1,0 +1,248 @@
+<!--index.wxml-->
+<view class="page me">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text style="margin-left:240rpx;font-size:28rpx;margin-top:6rpx;" wx:if="{{username&&userInfo.nickName}}">用户名：{{username}}</text>
+    <text style="margin-left:240rpx;font-size:28rpx;margin-top:40rpx" wx:elif="{{username==null}}"></text>
+    <text style="margin-left:240rpx;font-size:28rpx;margin-top:20rpx" wx:else>用户名：{{username}}</text>
+    <text class="by">发布供应，让客户找到你！</text>
+  </view>
+
+  <view wx:if="{{userInfo.nickName}}" style="height:20rpx;background:#eeeeee"></view>
+  <button wx:if="{{username&&!userInfo.nickName}}" class="shouquan" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点此授权获取您的昵称信息</button>
+  <button wx:elif="{{username==null}}" class="shouquan" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点此授权获取以下功能使用权</button>
+  <!--已注册用户-->
+  <view wx:if="{{storage}}">
+    <view class="view-cell" style="border-top:none">
+      <navigator style="width:100%" url="/pages/sell/pages/company/company?username={{username}}&company={{company}}&groupid={{groupid}}&honor_id={{honor_id}}">
+        <view class="view-cell-primary">
+          <text class="view-img" style="font-size:45rpx;margin-right:12rpx;">🏠</text>
+          <text class="view-name" style="color:#009933">我的供应</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view>
+    <navigator style="width:100%" url="/pages/mingpian/pages/mpj/mpj?uid={{storage}}" hover-class="other-navigator-hover">
+      <view class="view-cell">
+        <view class="view-cell-primary">
+          <text class="view-img" style="font-size:45rpx;margin-right:12rpx;">📁</text>
+          <text class="view-name">我的名片夹</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator style="width:100%" url="/pages/tabBar/ksfb/ksfb" open-type="switchTab" hover-class="other-navigator-hover">
+      <view class="view-cell">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/pen.png" />
+          <text class="view-name">发布供应</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator class='btn-opacity' url="/pages/tabBar/ksfb/ksfb?r=1" open-type="reLaunch">
+      <view class="opacity-pic"></view>
+      <view class='opacity-text'>看视频解锁发供应</view>
+      <image src='/image/lock.png' class='lock'></image>
+    </navigator>
+
+    <view class="view-cell">
+      <navigator style="width:100%" url="/pages/tabBar/mybuy/mybuy" open-type="switchTab" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/pen.png" />
+          <text class="view-name">发布求购</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view>
+    <navigator class='btn-opacity' url="/pages/tabBar/mybuy/mybuy?r=1" open-type="reLaunch">
+      <view class="opacity-pic"></view>
+      <view class='opacity-text'>看视频解锁发求购</view>
+      <image src='/image/lock.png' class='lock'></image>
+    </navigator>
+    <view class="view-cell">
+      <navigator style="width:100%" url="/pages/messages/pages/messages/messages?uid={{storage}}" open-type="navigate" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/msg.png" />
+          <text class="view-name">我的消息[<text style="color:#999999;font-size:24rpx">很重要，含<text style="color:#009933">买家|卖家</text>询单</text>]</text>
+          <text class="right">{{right}}</text>
+          <view class="point" wx:if="{{isread == 0}}"></view>
+        </view>
+      </navigator>
+    </view>
+    <view class="view-cell">
+      <navigator wx:if="{{itemid==null}}" style="width:100%" url="/pages/tabBar/ksfb/ksfb" open-type="switchTab">
+        <view class="view-cell-primary">
+          <text class="view-img" style="font-size:45rpx;margin-right:12rpx;">💰</text>
+          <text class="view-name" style="color:red">我的助力金[<text style="color:#999">发布信息后才可查看</text>]</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+      <navigator wx:else style="width:100%" url="/pages/pay/pages/zlj/zlj?itemid={{itemid}}&userid={{storage}}&myMoney={{w_money}}&title={{title}}">
+        <view class="view-cell-primary">
+          <text class="view-img" style="font-size:45rpx;margin-right:12rpx;">💰</text>
+          <text class="view-name" style="color:red">我的助力金</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="view-cell" style="border-top:20rpx solid #eeeeee;display:{{block}}">
+      <navigator style="width:100%" url="/pages/pay/pages/pay/pay?username={{username}}" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/vip.png" />
+          <text class="view-name">服务升级</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="view-cell" style='display:{{block}}'>
+      <navigator style="width:100%" url="/pages/pay/pages/payment/payment" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/cft.png" />
+          <text class="view-name">财富通</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="view-cell" style='display:{{block}}'>
+      <navigator style="width:100%" url="/pages/pay/pages/qgpay/qgpay" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <text class="success" style="font-size:42rpx;top:6rpx">💰</text>
+          <text class="view-name">供货通</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="view-cell" style="border-top:20rpx solid #eeeeee">
+      <navigator url="/pages/honor/pages/myhonor/myhonor?username={{username}}&company={{company}}&groupid={{groupid}}&honor_id={{honor_id}}" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <icon class="success" type="success" size="20" />
+          <text class="view-name">资质证书</text>
+        </view>
+      </navigator>
+      <navigator wx:if="{{honor_id==3 || honor_id==0}}" class="upload" url="/pages/honor/pages/honor/honor">上传证书</navigator>
+      <icon class="success_no_circle" wx:if="{{honor_id==1}}" type="success_no_circle" size="14" />
+      <text class="status" wx:if="{{honor_id==1}}">认证成功</text>
+      <text class="status" wx:if="{{honor_id==2}}">审核中</text>
+      <text class="status" wx:if="{{honor_id==3}}">认证失败</text>
+      <text class="status" wx:if="{{honor_id==0}}">未认证</text>
+    </view>
+    <!-- <view class="view-cell" wx:if="{{introduce_id!=1}}">
+      <navigator style="width:100%" url="/pages/honor/pages/CompanyProfile/CompanyProfile" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/pen.png" />
+          <text class="view-name">公司介绍</text>
+          <text class="status" wx:if="{{introduce_id==2}}">未通过审核</text>
+          <text class="status" wx:if="{{introduce_id==3}}">审核中</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </navigator>
+    </view> -->
+  </view>
+  <!--未注册用户-->
+  <view wx:else>
+    <view class="view-cell" style="border-top:none">
+
+      <view style="width:100%" bindtap="tishi">
+        <view class="view-cell-primary">
+          <text class="view-img" style="font-size:45rpx;margin-right:12rpx;">🏠</text>
+          <text class="view-name" style="color:#009933">我的供应</text>
+          <text class="right">{{right}}</text>
+        </view>
+
+      </view>
+    </view>
+    <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+      <view class="view-cell">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/pen.png" />
+          <text class="view-name">发布供应</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="view-cell">
+      <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/pen.png" />
+          <text class="view-name">发布求购</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="view-cell">
+      <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/msg.png" />
+          <text class="view-name">我的消息[<text style="color:#999999;font-size:24rpx">很重要，含<text style="color:#009933">买家|卖家</text>询单</text>]</text>
+          <text class="right">{{right}}</text>
+          <view class="point" wx:if="{{isread == 0}}"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="view-cell" style="border-top:20rpx solid #eeeeee;display:{{block}}">
+      <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/vip.png" />
+          <text class="view-name">服务升级</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="view-cell" style='display:{{block}}'>
+      <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/cft.png" />
+          <text class="view-name">财富通</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="view-cell" style='display:{{block}}'>
+      <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <text class="success" style="font-size:42rpx;top:6rpx">💰</text>
+          <text class="view-name">供货通</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="view-cell" style="border-top:20rpx solid #eeeeee">
+      <view bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <icon class="success" type="success" size="20" />
+          <text class="view-name">资质证书</text>
+        </view>
+      </view>
+      <navigator wx:if="{{honor_id==3 || honor_id==0}}" class="upload" url="/pages/honor/pages/honor/honor">上传证书</navigator>
+      <icon class="success_no_circle" wx:if="{{honor_id==1}}" type="success_no_circle" size="14" />
+      <text class="status" wx:if="{{honor_id==1}}">认证成功</text>
+      <text class="status" wx:if="{{honor_id==2}}">审核中</text>
+      <text class="status" wx:if="{{honor_id==3}}">认证失败</text>
+      <text class="status" wx:if="{{honor_id==0}}">未认证</text>
+    </view>
+    <!-- <view class="view-cell" wx:if="{{introduce_id!=1}}">
+      <view style="width:100%" bindtap="tishi" hover-class="other-navigator-hover">
+        <view class="view-cell-primary">
+          <image class="view-img" src="/image/pen.png" />
+          <text class="view-name">公司介绍</text>
+          <text class="status" wx:if="{{introduce_id==2}}">未通过审核</text>
+          <text class="status" wx:if="{{introduce_id==3}}">审核中</text>
+          <text class="right">{{right}}</text>
+        </view>
+      </view>
+    </view> -->
+  </view>
+
+  <import src="../../../templet.wxml" />
+  <template is="miniProgram" />
+  <!-- <view class="ad">
+    <ad unit-id="adunit-b3a4a82a4369488d"></ad> 
+  </view> -->
+  <view class="c"> © 2018 本衣网络</view>
+</view>

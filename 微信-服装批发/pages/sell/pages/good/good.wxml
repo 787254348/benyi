@@ -1,0 +1,102 @@
+<import src="../../../../templet.wxml" />
+<template is="nav" />
+<view class="content">
+  <share-modal id="shareModal" wx:if="{{options.is_share==1}}">
+    <view slot="icon" class='modal-icon'>
+      <icon type='cancel' size="30"></icon>
+    </view>
+    <view slot="body" class='modal-body'>
+      <button type="primary" style="background:#fff;color:#009933;border:6rpx solid #009933;opacity:1;height:250rpx;line-height:240rpx;" open-type="share" bindtap="onshare" class="b-t">💰点我分享到微信群赚助力金！</button>
+    </view>
+  </share-modal>
+  <view class="cp">
+    <swiper class="slide-image" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:if="{{good.thumb.length<100&good.thumb.length>50}}">
+        <swiper-item>
+          <image src="{{good.thumb}}" class="slide-image" mode="aspectFit" data-name="{{good.thumb}}" data-b="{{good.thumb}}" data-c="{{good.thumb1}}" data-d="{{good.thumb2}}" data-e="{{good.thumb3}}" data-f="{{good.thumb4}}" bindtap="aaa" />
+        </swiper-item>
+      </block>
+      <block wx:if="{{good.thumb1.length<100&good.thumb1.length>50}}">
+        <swiper-item>
+          <image src="{{good.thumb1}}" class="slide-image" mode="aspectFit" data-name="{{good.thumb1}}" data-b="{{good.thumb}}" data-c="{{good.thumb1}}" data-d="{{good.thumb2}}" data-e="{{good.thumb3}}" data-f="{{good.thumb4}}" bindtap="aaa" />
+        </swiper-item>
+      </block>
+      <block wx:if="{{good.thumb2.length<100&good.thumb2.length>50}}">
+        <swiper-item>
+          <image src="{{good.thumb2}}" class="slide-image" mode="aspectFit" data-name="{{good.thumb2}}" data-b="{{good.thumb}}" data-c="{{good.thumb1}}" data-d="{{good.thumb2}}" data-e="{{good.thumb3}}" data-f="{{good.thumb4}}" bindtap="aaa" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="title">{{good.title}}</view>
+  <view class="information" style="margin-top:20rpx;">
+    <button type="primary" style="background:#fff;color:#009933;width:93%;margin-left:0;border:6rpx solid #009933;opacity:1;" open-type="share" bindtap="onshare" class="b-t">💰转发到微信群赚助力金！</button>
+  </view>
+  <view class="con">
+    <view class="product">产品详情：</view>
+    <view class="describe"> {{good.content}}</view>
+  </view>
+  <view class="ad">
+    <ad unit-id="adunit-688717408043ef2d"></ad>
+  </view>
+  <view class="price">
+    <view class="pifa">批发价：</view>
+    <view wx:if="{{good.price==0.00}}" class="num">面议</view>
+    <view wx:else class="num">
+      <text style="color:#009933">{{good.price}}</text>元/{{good.unit}}</view>
+  </view>
+  <navigator wx:if="{{good.honor_id==1}}" class="honor" url="/pages/honor/pages/myhonor/myhonor?company={{good.company}}&groupid={{good.groupid}}&honor_id={{good.honor_id}}&username={{good.username}}" open-type="redirect">
+    <icon class="success" type="success" size="15" /> 该商家已通过资质认证</navigator>
+
+  <view class="information">
+    <navigator url="/pages/pay/pages/pay/pay">
+      <image wx:if="{{good.groupid>6}}" class="vip" src="/image/vip.1.png" />
+    </navigator>
+    <navigator url="/pages/sell/pages/company/company?username={{good.username}}&company={{good.company}}&groupid={{good.groupid}}&honor_id={{good.honor_id}}" open-type="redirect">
+      <view class="company">供应商:
+        <text> {{good.company}}</text>
+      </view>
+    </navigator>
+    <view>地址: {{good.address}}</view>
+    <view style="display:flex;width:93%">
+      <navigator url="/pages/mingpian/pages/mpxq/xq?scene={{good.userid}}" class="mingpian">
+        <text>☎点此查看他名片</text>
+      </navigator>
+      <view style="border-top:0" wx:if="{{storage}}">
+        <navigator url="/pages/sell/pages/inquiry/inquiry?uid={{storage}}&itemid={{options.itemid}}&title={{good.title}}&username={{good.username}}&openid={{openid}}">
+          <view class="zixun" style="width:64%;color:#fff"> 点我咨询 </view>
+        </navigator>
+      </view>
+      <view style="border-top:0" wx:else>
+        <view bindtap="shouquan" class="zixun" style="width:64%;color:#fff"> 点我咨询 </view>
+      </view>
+    </view>
+    <view class="ss">电话咨询记得说是在
+      <text class="benyi">［本衣］</text>小程序［服装批发采购］找到您的信息的哟～</view>
+
+    <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可询单！</button>
+  </view>
+
+  <view class="nav" style="border-top:20rpx solid #eee;margin-top:20rpx;border-bottom:0">
+    <navigator open-type="switchTab" url="/pages/tabBar/home/home">首页</navigator>
+    <navigator style="background:#009933;color:#fff;border-radius:10rpx" open-type="reLaunch" url="/pages/tabBar/ksfb/ksfb?r=1">
+      <view>发布供应</view>
+      <view style='position:absolute;margin-top:-52rpx;'>
+        <view class="good-opacity"></view>
+        <view class='good-text'>看视频发供应</view>
+        <image src='/image/lock.png' class='good-lock'></image>
+      </view>
+    </navigator>
+    <navigator open-type="reLaunch" url="/pages/tabBar/mybuy/mybuy?r=1">
+      <view>发布求购</view>
+      <view style='position:absolute;margin-top:-52rpx;'>
+        <view class="good-opacity"></view>
+        <view class='good-text'>看视频发求购</view>
+        <image src='/image/lock.png' class='good-lock'></image>
+      </view>
+    </navigator>
+    <navigator open-type="switchTab" url="/pages/tabBar/buy/buy">求购信息</navigator>
+  </view>
+  <template is="miniProgram" />
+  <view class="c"> © 2018 本衣网络</view>
+</view>

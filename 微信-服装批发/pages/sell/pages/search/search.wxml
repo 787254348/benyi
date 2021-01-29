@@ -1,0 +1,52 @@
+<view class="page home">
+  <view class="top">
+    <form bindsubmit="formSubmit">
+      <view class="solo">本衣</view>
+      <view  class="rsearch">
+          <input name="rsearch" style="width:88%" value="{{options.word}}" />
+      </view>
+      <button class="b" formType="submit">
+        <icon type="search" size="20" />
+      </button>
+    </form>
+  </view>
+
+  <!--商品goods-->
+  <view style="display:{{style}}">
+    <view class="goods">
+      <scroll-view bindscroll="scroll" style="height: {{clientHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltolower="pullUpLoad">
+        <view class="goods-box" wx:for="{{goodslist}}" wx:key="" data-id="{{item.itemid}}">
+          <navigator url="/pages/sell/pages/good/good?itemid={{item.itemid}}&title={{item.title}}">
+            <image class="gds-img"  wx:if="{{item.thumb.length<100&item.thumb.length>20}}" src="{{arr[index]?item.thumb:''}}" />
+            <image class="gds-img"  wx:elif="{{item.thumb1.length<100&item.thumb1.length>20}}" src="{{arr[index]?item.thumb1:''}}" />
+            <image class="gds-img"  wx:else src="{{arr[index]?item.thumb2:''}}" />
+            <text wx:if="{{item.honor_id==1}}" class="gds-title" style="padding-left:116rpx;">{{item.title}}  </text>
+            <text wx:else class="gds-title" style="padding-left:34rpx;">{{item.title}}  </text>
+            <view wx:if="{{item.price==0.00}}" class="money">
+              <text class="price"> 面议</text>
+            </view>
+            <view wx:else class="money">
+              <text style="font-size:28rpx;">¥ : </text>
+              <text class="price"> {{item.price}}</text>
+            </view>
+          </navigator>
+          <navigator wx:if="{{item.honor_id==1}}" url="/pages/honor/pages/myhonor/myhonor?username={{item.username}}&company={{item.company}}&groupid={{item.groupid}}&honor_id={{item.honor_id}}" class="text-ico">已认证</navigator>
+          <navigator url="/pages/pay/pay">
+            <image wx:if="{{item.groupid>6}}" class="vip" src="/image/vip.1.png" />
+          </navigator>
+        </view>
+      </scroll-view>
+      <view class="body-view">
+        <loading hidden="{{hidden}}" bindchange="loadingChange">
+          加载中...
+        </loading>
+      </view>
+    </view>
+  </view>
+  <view style="display:{{tishi}}" class="tishi">你搜索的供应信息不存在！请重新搜索</view>
+
+  <!-- more更多  -->
+  <view class="more">
+    <text class="more-title" style="display:{{moreText}}">亲，暂时只能显示到此，如需查看更多请前往本衣网。</text>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/qgpay/qgpay.wxml-->
+<view class="body">
+  <view class="content">💰供货通，是本衣网络为促进优质供应商与采购商高效及时沟通，而推出的服务。</view>
+  <view class="content">特权：每天可无限查看求购信息联系方式，随时与采购商联系，助您随时掌握商机。</view>
+  <view class="content">费用：198元/年 每天仅需五毛多</view>
+  <form name='pushMsgFm' report-submit bindsubmit="pay">
+    <input type="hidden" name="openid" value="{{openid}}" style="display:none" />
+    <input type="hidden" name="money" value="19800" style="display:none" />
+    <input type="hidden" name="userid" value="{{storage}}" style="display:none" />
+    <input type="hidden" name="username" value="{{username}}" style="display:none" />
+    <input type="hidden" name="ty" value="3" style="display:none" />
+    <input type="hidden" name="number" value="1" style="display:none" />
+    <input type="hidden" name="address" value="{{information['address']}}" style="display:none" />
+    <input type="hidden" name="totime" value="{{information['totime']}}" style="display:none" />
+    <view class="xieyi">点击确定，即表示已阅读并同意<navigator style="display:inline" url="/pages/pay/pages/xieyi/xieyi">vip协议</navigator>
+    </view>
+    <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可确定！</button>
+    <button wx:if="{{storage}}" class="btn-area"  formType="submit">确定</button>
+    <button wx:else class="btn-area"  bindtap="tishi">确定</button>
+  </form>
+
+</view>

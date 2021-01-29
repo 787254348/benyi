@@ -1,0 +1,47 @@
+<import src="../../../../templet.wxml" />
+<view class="page">
+  <view class="body">
+    <view class="top">
+      <view wx:if="{{result.username!=result.truename}}">{{result.truename}}</view>
+      <view wx:if="{{result.job}}">{{result.job}}</view>
+      <view>{{result.company}}</view>
+    </view>
+    <view class="content">
+      <view>手机：
+        <text>{{result.mobile}}</text>
+      </view>
+      <view>邮箱：
+        <text>{{result.email}}</text>
+      </view>
+      <view class="address">公司地址：
+        <text>{{result.address}}</text>
+      </view>
+      <navigator class="yewu" url="/pages/sell/pages/company/company?company={{result.company}}&groupid={{result.groupid}}&honor_id={{result.honor_id}}&username={{result.username}}">主营业务：
+        <view wx:if="{{title}}">{{title}}</view>
+      </navigator>
+      <view>公司介绍：</view>
+      <view class="introduce">
+        <text>{{result.content}}</text>
+      </view>
+    </view>
+  </view>
+  <button open-type="share" class="btn">发送本张名片</button>
+  <view style="display:{{bc}}" class="save" bindtap="save" data-cid="{{options.scene}}">保存本张名片</view>
+  <view style="display:{{dlt}}" class="save" bindtap="dlt" data-cid="{{options.scene}}">删除本张名片</view>
+  <navigator style="display:{{fs}}" class="save" url="/pages/mingpian/pages/mpfb/mpfb?uid={{options.scene}}">修改本张名片</navigator>
+  <button style="display:{{sq}}" open-type="getUserInfo" class="save" bindgetuserinfo="onGotUserInfo">点此授权保存名片</button>
+  <navigator wx:if="{{me_uid&&me_uid!=options.scene}}" class="make" url="/pages/mingpian/pages/mpfb/mpfb?uid={{me_uid}}">制作我的名片</navigator>
+  <view style="display:{{fs}};width:100%;margin-left:0" class="save" bindtap="canvas">生成图片</view>
+  <!--隐藏生成的图片-->
+  <canvas canvas-id="shareCanvas" style="width:375px;height:355px;position:absolute;top:-400px" />
+
+  <view class="nav" style="border-bottom:none">
+    <navigator url="/pages/tabBar/home/home" open-type="switchTab">首页</navigator>
+    <navigator url="/pages/tabBar/ksfb/ksfb" open-type="switchTab">发布供应</navigator>
+    <navigator wx:if="{{me_uid}}" url="/pages/mingpian/pages/mpj/mpj?uid={{me_uid}}">名片夹</navigator>
+    <navigator url="/pages/tabBar/me/me" open-type="switchTab">我的</navigator>
+  </view>
+
+  <template is="miniProgram" />
+  <view class="c"> © 2018 本衣网络</view>
+</view>

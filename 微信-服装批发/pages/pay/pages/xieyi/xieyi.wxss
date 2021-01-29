@@ -1,0 +1,16 @@
+/* pages/xieyi/xieyi.wxss */
+.content{
+    display:block;
+    padding-left:1rem;
+    padding-right:1rem;
+    margin-top:-40rpx;
+    padding-bottom:50rpx;
+    font-size:24rpx;
+    color:#666;
+    text-align:justify;
+}
+.title{
+    text-align:center;
+    font-size:36rpx;
+    margin-top:50rpx;
+}

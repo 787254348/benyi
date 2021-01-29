@@ -1,0 +1,115 @@
+{
+  "pages": [
+    "pages/tabBar/home/home",
+    "pages/tabBar/ksfb/ksfb",
+    "pages/tabBar/buy/buy",
+    "pages/tabBar/mybuy/mybuy",
+    "pages/tabBar/me/me"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#006666",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序发布供应的位置信息"
+    }
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#006666",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/home/home",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/homeHL.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/ksfb/ksfb",
+        "iconPath": "image/safe.png",
+        "selectedIconPath": "image/safeHL.png",
+        "text": "发供应"
+      },
+      {
+        "pagePath": "pages/tabBar/buy/buy",
+        "iconPath": "image/note.png",
+        "selectedIconPath": "image/noteHL.png",
+        "text": "求购信息"
+      },
+      {
+        "pagePath": "pages/tabBar/mybuy/mybuy",
+        "iconPath": "image/safe.png",
+        "selectedIconPath": "image/safeHL.png",
+        "text": "发求购"
+      },
+      {
+        "pagePath": "pages/tabBar/me/me",
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/meHL.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx5e84d3e0b9a49a3e",
+    "wx1a664e0d81cf5f16"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/buy/",
+      "pages": [
+        "pages/buyInquiry/buyInquiry",
+        "pages/qgxq/qgxq"
+      ]
+    },
+    {
+      "root": "pages/mingpian/",
+      "pages": [
+        "pages/mpfb/mpfb",
+        "pages/mpxq/xq",
+        "pages/mpj/mpj"
+      ]
+    },
+    {
+      "root": "pages/honor/",
+      "pages": [
+        "pages/CompanyProfile/CompanyProfile",
+        "pages/honor/honor",
+        "pages/myhonor/myhonor"
+      ]
+    },
+    {
+      "root": "pages/messages/",
+      "pages": [
+        "pages/messages/messages",
+        "pages/reply/reply"
+      ]
+    },
+    {
+      "root": "pages/pay/",
+      "pages": [
+        "pages/pay/pay",
+        "pages/payment/payment",
+        "pages/qgpay/qgpay",
+        "pages/zlj/zlj",
+        "pages/xieyi/xieyi"
+      ]
+    },
+    {
+      "root": "pages/sell/",
+      "pages": [
+        "pages/categroy/categroy",
+        "pages/company/company",
+        "pages/good/good",
+        "pages/inquiry/inquiry",
+        "pages/search/search"
+      ]
+    }
+  ],
+  "sitemapLocation": "sitemap.json"
+}

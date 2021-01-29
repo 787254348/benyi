@@ -1,0 +1,171 @@
+
+.con {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.title {
+  /* border-top: 1rpx solid #eaeaea; */
+  line-height: 2rem;
+  font-size: 38rpx;
+  border-bottom: 0.5rem solid #ededed;
+}
+
+.m-title {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  line-height: 2.4rem;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.txt {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.describe {
+  width: 100%;
+  height: auto;
+  display: block;
+  line-height: 42rpx;
+  padding: 0 10rpx 0 0rpx;
+}
+
+.information {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-left: 0.3rem;
+  padding-bottom: 26rpx;
+}
+
+.information view {
+  display: block;
+  width: 100%;
+  line-height: 2rem;
+}
+
+.contect {
+  margin-top: 20rpx;
+  display: inline-block;
+  line-height: 3rem;
+}
+
+.home {
+  position: fixed;
+  top: 40rpx;
+  right: 50rpx;
+  z-index: 4;
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+}
+
+.address {
+  padding-left: 0.3rem;
+  padding-bottom: 26rpx;
+  padding-top: 26rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+
+.c {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #999;
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}
+
+.tupian {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height:500rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.slide-image{
+  height:500rpx;
+}
+
+.share {
+  width: 50rpx;
+  height: 60rpx;
+  top: 156rpx;
+  line-height: 60rpx;
+  left: 46%;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 0;
+  position: fixed;
+  z-index: 4;
+}
+
+.sh {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+button::after {
+  border: 0;
+}
+
+.right {
+  float: right;
+  font-size: 36rpx;
+  color: #999;
+}
+
+.shouquan {
+  text-align: center;
+  background: #eee;
+  height: 32px;
+  line-height: 32px;
+  border: 1rpx solid #093;
+  color: #093;
+  border-radius: 10rpx;
+  margin-right: 5%;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.btn-t {
+  background-color: #6c6;
+  color: #fff;
+  margin-right: 5%;
+  margin-bottom: 20rpx;
+}
+
+.btn-c {
+  background-color: #6c6;
+  margin-left: 0;
+  width: 46%;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.btn-b {
+  background-color: #6c6;
+  margin-left: 0;
+  width: 46%;
+}
+
+.view-name text {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.mingpian {
+  line-height: 2rem;
+  width: 100%;
+  color: #093;
+  padding-left:0.3rem;
+  padding-bottom:6rpx;
+}
+
+.mingpian text {
+  border-bottom: 1rpx solid #090;
+}

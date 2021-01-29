@@ -1,0 +1,316 @@
+.content {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.cp {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 0.3rem;
+}
+
+.slide-image {
+  height: 500rpx;
+}
+
+.con {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 0.5rem solid #ededed;
+}
+
+.describe {
+  width: 93%;
+  height: auto;
+  display: block;
+  line-height: 1.8rem;
+  padding-left: 0.8rem;
+  padding-right: 0.4rem;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.title {
+  line-height: 2rem;
+  display: block;
+  padding-left: 0.7rem;
+  color: #333;
+  border-bottom: 0.5rem solid #ededed;
+  padding-right: 1em;
+}
+
+.product {
+  display: block;
+  padding-left: 0.7rem;
+  color: #333;
+  line-height: 2rem;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.price {
+  font-size: 26rpx;
+  color: #666;
+  padding-left: 0.7rem;
+  border-top: 0.5rem solid #ededed;
+  border-bottom: 0.5rem solid #ededed;
+}
+
+.pifa {
+  display: inline-block;
+  color: #333;
+  line-height: 2rem;
+}
+
+.company {
+  border-top: 0;
+}
+
+.company text {
+  color: #090;
+  border-bottom: 1rpx solid #090;
+}
+
+.num {
+  display: inline-block;
+  color: #666;
+}
+
+.information {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: #333;
+  font-size: 26rpx;
+  padding-left: 0.7rem;
+}
+
+.information view {
+  display: block;
+  width: 93%;
+  line-height: 2rem;
+  border-top: 1rpx solid #eaeaea;
+  color: #666;
+}
+
+.home {
+  position: fixed;
+  top: 40rpx;
+  right: 50rpx;
+  z-index: 4;
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+}
+
+.fb {
+  width: 79rpx;
+  height: 41rpx;
+  margin-top: 30rpx;
+  padding-bottom: 35rpx;
+}
+
+.vip {
+  height: 32rpx;
+  width: 98rpx;
+}
+
+.honor {
+  font-size: 26rpx;
+  line-height: 2rem;
+  padding-left: 0.7rem;
+  color: #093;
+}
+
+.success {
+  position: relative;
+  top: 5rpx;
+}
+
+.c {
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #999;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.share {
+  width: 50rpx;
+  height: 60rpx;
+  top: 616rpx;
+  line-height: 60rpx;
+  left: 46%;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 0;
+  position: fixed;
+  z-index: 4;
+}
+
+.sh {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+button::after {
+  border: 0;
+}
+
+.right {
+  float: right;
+  font-size: 36rpx;
+  color: #999;
+}
+
+.shouquan {
+  text-align: center;
+  background: #eee;
+  height: 32px;
+  line-height: 32px;
+  border: 1rpx solid #093;
+  color: #093;
+  border-radius: 10rpx;
+  margin-right: 5%;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.ss {
+  padding-right: -0.6rem;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 40rpx;
+  width: 93%;
+}
+
+.benyi {
+  color: #093;
+  display: inline-block;
+  background: #fff;
+  height: 32rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  padding: 0;
+}
+
+.btn {
+  background-color: #6c6;
+  margin-left: 0;
+  width: 30%;
+  float: left;
+  margin-right: 20rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+
+.bt {
+  background-color: #6c6;
+  margin-left: 0;
+  width: 93%;
+  font-size: 42rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+
+.view-name text {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.mingpian {
+  line-height: 2rem;
+  border-top: 1rpx solid #eaeaea;
+  width: 93%;
+  color: #093;
+}
+
+.mingpian text {
+  border-bottom: 1rpx solid #090;
+}
+
+.wrap {
+  display: flex;
+  width: 100%;
+  flex: wrap;
+  margin-top: 20rpx;
+  border-top: 22rpx solid #eee;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.wrap navigator {
+  width: calc(30% - 4px);
+  margin-left: 2.5%;
+  border: 4rpx solid #35495e;
+  color: #35495e;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 70rpx;
+}
+
+.wrap view {
+  height: 40rpx;
+  width: 40rpx;
+  display: inline-block;
+  background-color: #093;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  font-weight: 900;
+  font-family: 微软雅黑;
+  font-size: 32rpx;
+  border-radius: 50%;
+}
+
+.zixun {
+  color: #fff;
+  background: #1aad19;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 38rpx;
+  border-radius: 10rpx;
+  margin-left: 28%;
+}
+
+.good-opacity {
+  position: absolute;
+  z-index: 10;
+  width: 170rpx;
+  height: 53rpx;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.good-text {
+  color: white;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  height: 57rpx;
+  opacity: 0.8;
+  margin: 8rpx 5rpx 0 0;
+  position: relative;
+  z-index: 12;
+  float: right;
+}
+
+.good-lock {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  z-index: 111;
+  top: 0;
+}
+
+.icon-cancle {
+  width: 30rpx;
+  float: right;
+  margin-bottom: 300rpx;
+}
+
+.modal-icon {
+  width:20rpx;
+}

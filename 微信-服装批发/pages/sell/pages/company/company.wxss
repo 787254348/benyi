@@ -1,0 +1,177 @@
+.banner {
+  overflow: hidden;
+  height: 150rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.swiper {
+  display: block;
+  height: 300rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 150rpx;
+}
+
+.dh{
+  display: flex;
+  width:100%;
+  flex-wrap:wrap;
+  padding-top:10rpx;
+  padding-bottom:10rpx;
+  border-bottom:4rpx solid #eee;
+}
+
+.dh navigator{
+  width:calc(22.5% - 2px);
+  margin-left:2%;
+  height:50rpx;
+  line-height:50rpx;
+  text-align: center;
+  color:#009933;
+  border:1rpx solid #009933;
+  font-weight:600;
+}
+
+/*商品goods*/
+
+.goods {
+  overflow: hidden;
+  border-top:2px solid #00cc00;
+  margin-top:10rpx;
+}
+
+.goods-box {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+  border-bottom: 6rpx solid #eee;
+}
+
+.goods-box .gds-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 1rem;
+  margin-top: 18rpx;
+  margin-bottom: 8rpx;
+}
+
+.goods-box .gds-title {
+  font-size: 28rpx;
+  height: 80rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  float: right;
+  margin-top: 16rpx;
+  width: 382rpx;
+  padding-right: 2em;
+  line-height: 40rpx;
+}
+
+.text-ico {
+  color: #093;
+  border: 2rpx solid #093;
+  width: 60rpx;
+  font-size: 20rpx;
+  float: left;
+  margin-top: -168rpx;
+  margin-left: 276rpx;
+  line-height: 20rpx;
+  height: 20rpx;
+  padding-top: 6rpx;
+}
+
+/*更多more*/
+
+.more {
+  display: block;
+  margin: 50rpx auto;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.more .more-title {
+  display: block;
+}
+
+.money {
+  font-size: 28rpx;
+  padding-left: 0.8em;
+  float: left;
+  margin-top: -92rpx;
+  margin-left: 252rpx;
+  color: #0a0;
+}
+
+.title {
+  text-align: left;
+  border-bottom: 2px solid #eee;
+  color: #777;
+  font-size: 30rpx;
+  padding-bottom: 12rpx;
+  width: 100%;
+  display: inline-block;
+}
+
+.txt {
+  margin-left: 0.5em;
+  margin-right: 0.3em;
+  font-size: 50rpx;
+}
+
+.image {
+  position: fixed;
+  top: 215rpx;
+  right: 50rpx;
+  z-index: 4;
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+}
+
+.fb {
+  width: 70rpx;
+  height: 37rpx;
+  position: absolute;
+  z-index: 4;
+  right: 82rpx;
+  top: 32rpx;
+}
+
+.price {
+  width: 77px;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 28rpx;
+  position: relative;
+  top: 7rpx;
+}
+
+.vip {
+  height: 32rpx;
+  width: 98rpx;
+  line-height: 40rpx;
+  float: right;
+  margin-top: -93rpx;
+  margin-right: 180rpx;
+}
+
+.honor {
+  padding-left: 1rem;
+  font-size: 30rpx;
+  line-height: 66rpx;
+  color: #093;
+  border-top:4rpx solid #eee;
+}
+
+.success {
+  margin-right: 12rpx;
+  position: relative;
+  top: 5rpx;
+}

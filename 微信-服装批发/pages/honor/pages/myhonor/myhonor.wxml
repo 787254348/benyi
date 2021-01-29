@@ -1,0 +1,27 @@
+<!--pages/myhonor/myhonor.wxml-->
+<navigator open-type="switchTab" url="/pages/tabBar/home/home">
+  <image class="home" src="/image/homeHL.png" />
+</navigator>
+<view class="title">认证信息</view>
+<view class="content">
+  <image wx:if="{{options.groupid>6}}" class="vip" src="/image/vip.1.png" />
+  <text wx:if="{{options.groupid>6}}" class="text" style="width:214rpx;margin-left:26rpx">VIP 1年</text>
+  <text wx:else class="text"> 未升级</text>
+  <navigator class="honor"  url="/pages/pay/pages/pay/pay">VIP升级</navigator>
+</view>
+<view class="content">
+  <icon wx:if="{{options.honor_id==1}}" class="success" type="success" size="20" />
+  <text wx:if="{{options.honor_id==1}}" class="text" style="width:400rpx">  已通过供应商身份认证</text>
+  <text wx:if="{{options.honor_id==0 ||options.honor_id==2 || options.honor_id==3}}" class="text">  未认证</text>
+</view>
+<view class="content" style="border-bottom:none">
+  <text>供应商名称：</text>
+  <navigator class="company" hover-class="none" url="/pages/sell/pages/company/company?company={{options.company}}&groupid={{options.groupid}}&honor_id={{options.honor_id}}&username={{options.username}}" open-type="redirect"> {{options.company}}</navigator>
+</view>
+<view class="introduce" wx:if="{{content}}">
+  <view style="margin-top:22rpx;">公司介绍:</view>
+  <view class="txt">{{content}}</view>
+</view>
+<button open-type="share" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="onshare" class="btn">转发到微信群</button>
+<navigator class="fb" open-type="switchTab" url="/pages/tabBar/ksfb/ksfb">发布信息</navigator>
+<view class="c"> © 2018 本衣网络</view>

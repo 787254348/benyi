@@ -1,0 +1,56 @@
+<view class="page home">
+  <navigator open-type="switchTab" url="/pages/tabBar/ksfb/ksfb">
+    <image class="fb" src="/image/1.png" />
+  </navigator>
+  <!--轮播banner-->
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="dh">
+    <navigator open-type="switchTab" url="/pages/tabBar/home/home">首页</navigator>
+    <navigator open-type="switchTab" url="/pages/tabBar/ksfb/ksfb">发布供应</navigator>
+    <navigator open-type="switchTab" url="/pages/tabBar/buy/buy">求购信息</navigator>
+    <navigator open-type="switchTab" url="/pages/tabBar/me/me">我的</navigator>
+  </view>
+
+  <view class="title"><text class="txt">🏠</text>{{options.company}}供应产品</view>
+  <view class="ad">
+      <ad unit-id="adunit-be0b208e6713e819"></ad> 
+  </view>
+  <navigator class="honor" url="/pages/honor/pages/myhonor/myhonor?company={{options.company}}&groupid={{options.groupid}}&honor_id={{options.honor_id}}&username={{options.username}}" open-type="redirect">
+    <icon class="success" type="success" size="15" /> 供应商认证信息</navigator>
+  <button open-type="share" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" style="background-color:#66cc66;width:90%">💰转发到微信群赚助力金！</button>
+  <!--商品goods-->
+  <view class="goods">
+    <scroll-view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltolower="pullUpLoad">
+      <view class="goods-box" wx:for="{{goodslist}}" data-id="{{item.itemid}}">
+        <navigator url="/pages/sell/pages/good/good?itemid={{item.itemid}}&title={{item.title}}" open-type="redirect">
+          <image class="gds-img" lazy-load="true" wx:if="{{item.thumb.length<100&item.thumb.length>50}}" src="{{item.thumb}}" />
+          <image class="gds-img" lazy-load="true" wx:elif="{{item.thumb1.length<100&item.thumb1.length>50}}" src="{{item.thumb1}}" />
+          <image class="gds-img" lazy-load="true" wx:else src="{{item.thumb2}}" />
+          <text wx:if="{{item.honor_id==1}}" class="gds-title" style="margin-right:-40rpx">{{item.title}}  </text>
+          <text wx:else class="gds-title" style="margin-right:36rpx">{{item.title}}  </text>
+          <view wx:if="{{item.price==0.00}}" class="money">
+            <text class="price"> 面议</text>
+          </view>
+          <view wx:else class="money">
+            <text style="font-size:28rpx;">¥ : </text>
+            <text class="price"> {{item.price}}</text>
+          </view>
+        </navigator>
+        <navigator wx:if="{{item.honor_id==1}}" url="/pages/honor/pages/myhonor/myhonor?username={{item.username}}&company={{item.company}}&groupid={{item.groupid}}&honor_id={{item.honor_id}}" class="text-ico">已认证</navigator>
+        <navigator url="/pages/pay/pages/pay/pay">
+          <image wx:if="{{item.groupid>6}}" class="vip" src="/image/vip.1.png" />
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <view style="height:100rpx"></view>
+</view>

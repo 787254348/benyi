@@ -1,0 +1,44 @@
+/* pages/qgpay/qgpay.wxss */
+
+.body {
+  margin-top: 50rpx;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.content {
+  font-size: 30rpx;
+  font-family: 微软雅黑;
+  margin-bottom: 30rpx;
+  color: #888;
+}
+
+.xieyi {
+  margin-top: 100rpx;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.shouquan {
+  text-align: center;
+  background: #eee;
+  height: 32px;
+  line-height: 32px;
+  border: 1rpx solid #093;
+  color: #093;
+  border-radius: 10rpx;
+  width: 96%;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.btn-area {
+  background-color: #318000;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 96%;
+}
+

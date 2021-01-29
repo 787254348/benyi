@@ -1,0 +1,27 @@
+<import src="../../../../templet.wxml" />
+
+<view class="nav">
+  <navigator url="/pages/tabBar/home/home" open-type="switchTab">首页</navigator>
+  <navigator url="/pages/tabBar/ksfb/ksfb" open-type="switchTab">发布供应</navigator>
+  <navigator url="/pages/tabBar/me/me" open-type="switchTab">我的</navigator>
+</view>
+
+<view class="card">
+  <view class="line"></view>我的名片
+  </view>
+<navigator class="save" url="/pages/mingpian/pages/mpfb/mpfb?uid={{me_uid}}">修改本张名片</navigator>
+<navigator class="content" url="/pages/mingpian/pages/mpxq/xq?scene={{me_uid}}">
+  <view wx:if="{{my_card.username!=my_card.truename}}">{{my_card.truename}}</view>
+  <view>{{my_card.job}}</view>
+  <view>{{my_card.company}}</view>
+</navigator>
+
+<view class="card">
+  <view class="line"></view>我收到的名片</view>
+<navigator class="content" wx:for="{{other_card}}" wx:key="" url="/pages/mingpian/pages/mpxq/xq?scene={{item.userid}}">
+  <view wx:if="{{item.username!=item.truename}}">{{item.truename}}</view>
+  <view>{{item.job}}</view>
+  <view>{{item.company}}</view>
+</navigator>
+<template is="miniProgram" />
+<view class="c"> © 2018 本衣网络</view>

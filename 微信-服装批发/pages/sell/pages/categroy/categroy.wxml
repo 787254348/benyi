@@ -1,0 +1,58 @@
+<view >
+  <image src="/image/banner1.jpg" class="banner" />
+  <button class="share" open-type="share">
+    <image class="sh" src="/image/share.png" />
+  </button>
+  <view class="categroy" >
+    <navigator open-type="switchTab" url="/pages/tabBar/home/home" >首页</navigator>
+    <view bindtap="cate" data-name="890" class="{{options.catid==890 ? 'light' : 'in'}}">女装</view>
+    <view bindtap="cate" data-name="893" class="{{options.catid==893 ? 'light' : 'in'}}">童装</view>
+    <view bindtap="cate" data-name="892" class="{{options.catid==892 ? 'light' : 'in'}}">男装</view>
+    <view bindtap="cate" data-name="891" class="{{options.catid==891 ? 'light' : 'in'}}">母婴</view>
+    <view bindtap="cate" data-name="894" class="{{options.catid==894 ? 'light' : 'in'}}">鞋子</view>
+    <view bindtap="cate" data-name="895" class="{{options.catid==895 ? 'light' : 'in'}}">箱包</view>
+    <view bindtap="cate" data-name="9" class="{{options.catid==9 ? 'light' : 'in'}}">运动</view>
+    <view bindtap="cate" data-name="10" class="{{options.catid==10 ? 'light' : 'in'}}">辅料</view>
+    <view bindtap="cate" data-name="12" class="{{options.catid==12 ? 'light' : 'in'}}">道具</view>
+    <view bindtap="cate" data-name="13" class="{{options.catid==13 ? 'light' : 'in'}}">设备</view>
+    <view bindtap="cate" data-name="32" class="{{options.catid==32 ? 'light' : 'in'}}">其他</view>
+  </view>
+  <view class="ad">
+      <ad unit-id="adunit-04554cd8cb13ae4f"></ad> 
+  </view>
+  <!--商品goods-->
+  <view style="display:{{style}}">
+    <view class="goods">
+      <scroll-view bindscroll="scroll" style="height: {{clientHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad">
+        <view class="goods-box" wx:for="{{goodslist}}" wx:key="" data-id="{{item.itemid}}">
+          <navigator url="/pages/sell/pages/good/good?itemid={{item.itemid}}&title={{item.title}}">
+            <image class="gds-img"  wx:if="{{item.thumb.length<100&item.thumb.length>20}}" src="{{arr[index]?item.thumb:''}}" />
+            <image class="gds-img"  wx:elif="{{item.thumb1.length<100&item.thumb1.length>20}}" src="{{arr[index]?item.thumb1:''}}" />
+            <image class="gds-img"  wx:else src="{{arr[index]?item.thumb2:''}}" />
+            <text wx:if="{{item.honor_id==1}}" class="gds-title" style="padding-left:116rpx;">{{item.title}}  </text>
+            <text wx:else class="gds-title" style="padding-left:34rpx;">{{item.title}}  </text>
+            <view wx:if="{{item.price==0.00}}" class="money">
+              <text class="price"> 面议</text>
+            </view>
+            <view wx:else class="money">
+              <text style="font-size:28rpx;">¥ : </text>
+              <text class="price"> {{item.price}}</text>
+            </view>
+          </navigator>
+          <navigator wx:if="{{item.honor_id==1}}" url="/pages/honor/pages/myhonor/myhonor?username={{item.username}}&company={{item.company}}&groupid={{item.groupid}}&honor_id={{item.honor_id}}" class="text-ico">已认证</navigator>
+          <navigator url="/pages/pay/pages/pay/pay">
+            <image wx:if="{{item.groupid>6}}" class="vip" src="/image/vip.1.png" />
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <navigator style="display:{{reply}};text-align:center;padding-top:30%;color:#009933;font-size:50rpx" url="/pages/sell/pages/categroy/categroy?catid={{options.catid}}" open-type="redirect">
+    <view style="text-align:center;padding-top:8%;color:#00cc66;font-size:50rpx;">
+      哎哟～网络不好，</view>
+    <view class="reply">点击重新加载...</view>
+  </navigator>
+  <view class="more">
+    <text class="more-title" style="display:{{moreText}}">亲，暂时只能显示到此，如需查看更多请前往本衣网。</text>
+  </view>
+</view>

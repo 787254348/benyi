@@ -1,0 +1,31 @@
+
+<view class="wrap">
+  <navigator open-type="switchTab" url="/pages/tabBar/home/home">首页</navigator>
+  <navigator open-type="switchTab" url="/pages/tabBar/me/me">我的</navigator>
+  <navigator url="/pages/mingpian/pages/mpj/mpj?uid={{options.userid}}" >名片夹</navigator>
+</view>
+<navigator url="/pages/sell/pages/good/good?itemid={{options.itemid}}&title={{options.title}}" class="top">
+  <view class="money">
+    <view class="m-t">{{options.myMoney}}</view>
+    <view class="m-b">助力金</view>
+  </view>
+  <text class="title" >恭喜！您的助力金又增长了!</text>
+  <text class="introduce">继续把您的供应信息转发到群里，提高排名拿到更多精准客户！点此去赚取更多助力金！</text>
+</navigator>
+
+<form  report-submit bindsubmit="formSubmit">
+  <view class="lb">
+    <view class="content">♥ 助力金可提升您的供应信息排名，提高曝光量，获取精准客户！</view>
+    <navigator url="/pages/sell/pages/good/good?itemid={{options.itemid}}&title={{options.title}}" class="content">♥ 如何获得？把您的供应信息转发到群里，每一个好友点击围观一次您可获得一个助力金。<text class="d">点此去赚助力金</text></navigator>
+    <view class="content">♥ 您发布的供应信息排名靠前1天需要使用您30个助力金。</view>
+    <view style="color:#999999">
+      <text class="text">30个/天</text>
+      <text class="down" bindtap="down">-</text>
+      <input class="number" maxlength="3" type="number" name="num" value="{{Number}}" bindblur="bindblur" />
+      <text class="add" bindtap="add">+</text>
+    </view>
+  </view>
+  <view class="bottom">点击确定确认使用助力金排名靠前</view>
+  <button  class="btn-area"  formType="{{submit?'submit':''}}">确定</button>
+</form>
+<ad unit-id="adunit-b9f5d4303a7e6e3b" style="margin-top:40rpx"></ad> 

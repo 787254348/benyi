@@ -1,0 +1,28 @@
+
+<ad unit-id="adunit-00855467b47c2544"></ad> 
+
+<block class="right" wx:for="{{messages}}">
+  <view class="con">
+    <view class="left"></view>
+    <view class="right">
+      <view class="name" wx:if="{{item.typeid == 1}}">询价
+        <view class="text">（用户：{{item.company}}）</view>
+      </view>
+      <view class="name" wx:else>{{item.fromuser}}</view>
+      <view class="title" wx:if="{{item.sendtypeid == 1}}">
+        <navigator url="/pages/sell/pages/good/good?itemid={{item.itemid}}" open-type="redirect">{{item.title}}</navigator>
+      </view>
+      <view class="title" wx:elif="{{item.sendtypeid == 2}}">
+        <navigator url="/pages/buy/pages/qgxq/qgxq?itemid={{item.itemid}}" open-type="redirect">{{item.title}}</navigator>
+      </view>
+      <view class="words">{{item.content}}</view>
+      <view class="time" wx:if="{{item.typeid == 1}}">{{item.date}}</view>
+      <view class="time" style="displayblock" wx:else>{{item.date}}</view>
+      <view class="reply" wx:if="{{item.typeid == 1}}">
+        <navigator style="display:inline;" url="/pages/messages/pages/reply/reply?fromuser={{item.fromuser}}&touser={{item.touser}}&title={{item.title}}&sendtypeid={{item.sendtypeid}}">
+          <image class="img" src="/image/msg.png" open-type="redirect" />
+        </navigator>
+      </view>
+    </view>
+  </view>
+</block>

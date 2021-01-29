@@ -1,0 +1,43 @@
+.content {
+  margin-left: 0.7em;
+  margin-top: 30rpx;
+}
+
+.content textarea {
+  border: 1px solid #ccc;
+  color: #000;
+  width: 95%;
+  padding-left: 5px;
+}
+
+.contact {
+  display: block;
+  padding-left: 0.7rem;
+  color: #333;
+  line-height: 4rem;
+}
+
+.contact input {
+  border: 1px solid #ccc;
+  margin-left: 92px;
+  margin-top: -55px;
+  width: 70%;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  height: 74rpx;
+}
+
+.btn-area {
+  background-color: #318000;
+  color: #fff;
+}
+
+.home {
+  position: fixed;
+  top: 8rpx;
+  right: 13rpx;
+  z-index: 4;
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+}

@@ -1,0 +1,32 @@
+<!--pages/pay/pay.wxml-->
+<view>
+  <form name='pushMsgFm' report-submit bindsubmit="pay">
+    <input type="hidden" name="openid" value="{{openid}}" style="display:none" />
+    <input type="hidden" name="money" value="{{total}}" style="display:none" />
+    <input type="hidden" name="userid" value="{{storage}}" style="display:none" />
+    <input type="hidden" name="username" value="{{username}}" style="display:none" />
+    <input type="hidden" name="address" value="{{information['address']}}" style="display:none" />
+    <input type="hidden" name="totime" value="{{information['totime']}}" style="display:none" />
+    <input type="hidden" name="ty" value="2" style="display:none" />
+    <view class="lb">
+      <image class="img" src="/image/cft.png" />
+      <text class="content">财富通是本衣网络为商家优先曝光所提供的服务，获取财富通特权服务后，您所发布的产品信息将优先置顶，获得更多精准浏览量，赢得更多询价，比竞争对手快赢一步!</text>
+      <view style="color:#999999">
+        <text class="text">188元/月</text>
+        <text class="down" bindtap="down">-</text>
+        <input disabled="true" class="number" maxlength="3" type="number" name="number" value="{{Number}}" bindblur="bindblur" />
+        <text class="add" bindtap="add">+</text>
+      </view>
+    </view>
+    <view class="total">
+      <text>总价</text>
+      <text class="money">{{total}}</text>元
+    </view>
+    <view class="xieyi">点击确定，即表示已阅读并同意<navigator style="display:inline" url="/pages/pay/pages/xieyi/xieyi">vip协议</navigator>
+    </view>
+    <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可确定！</button>
+    <button wx:if="{{storage}}" class="btn-area"  formType="submit">确定</button>
+    <button wx:else class="btn-area"  bindtap="tishi">确定</button>
+    <button class="btn-wait"  bindtap="wait" >暂时不</button>
+  </form>
+</view>

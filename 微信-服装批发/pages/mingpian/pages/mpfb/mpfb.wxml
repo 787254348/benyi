@@ -1,0 +1,37 @@
+<ad unit-id="adunit-0cab9a4c6fa857cf"></ad>
+<form bindsubmit="formSubmit" >
+  <input type="hidden" name="userid" value="{{options.uid}}" style="display:none;" />
+  <view class="top">
+    <view class="line">
+      <view class="left"><text>*</text>姓名:</view>
+      <view class="right">
+        <input wx:if="{{username==name}}" type="text" name="name" value="" />
+        <input wx:else type="text" name="name" value="{{name}}" />
+      </view>
+    </view>
+    <view class="line">
+      <view class="left"><text>*</text>公司/单位:</view>
+      <view class="right"><input type="text" name="company" value="{{company}}" /></view>
+    </view>
+    <view class="line">
+      <view class="left"><text>*</text>部门/职务:</view>
+      <view class="right"><input type="text" name="job" value="{{job}}" /></view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="line">
+      <view class="left">手机:</view>
+      <view class="right"><input type="number" maxlength="11" name="mobile" value="{{mobile}}" /></view>
+    </view>
+    <view class="line">
+      <view class="left">邮箱:</view>
+      <view class="right"><input type="text" name="email" value="{{email}}" /></view>
+    </view>
+    <view class="line">
+      <view class="left">公司地址:</view>
+      <view class="right"><input type="text" name="address" value="{{address}}" /></view>
+     </view> 
+    <view class="left">公司介绍:</view> <textarea name="content" placeholder="" maxlength="-1" value="{{content}}"/>
+  </view>
+  <button class="btn" formType="submit" >保存名片</button>
+</form>

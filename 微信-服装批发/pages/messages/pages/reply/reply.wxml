@@ -1,0 +1,16 @@
+<form bindsubmit="formSubmit">
+  <input type="hidden" name="fromuser" value="{{options.fromuser}}" style="display:none;" />
+  <input type="hidden" name="touser" value="{{options.touser}}" style="display:none;" />
+  <input type="hidden" name="title" value="{{options.title}}" style="display:none;" />
+  <input type="hidden" name="sendtypeid" value="{{options.sendtypeid}}" style="display:none;" />
+  <view class="leimu">
+    回复内容:
+    <textarea  name="content" placeholder="" />
+  </view>
+  <view class="content">
+    <navigator open-type="switchTab" url="/pages/tabBar/home/home">
+      <image class="home" src="/image/homeHL.png" />
+    </navigator>
+    <button class="btn-area" formType="submit">发送回复</button>
+  </view>
+</form>

@@ -1,0 +1,64 @@
+<import src="../../../../templet.wxml" />
+<share-modal id="shareModal" wx:if="{{options.is_share==1}}">
+  <view slot="icon" class='modal-icon'>
+    <icon type='cancel' size="30"></icon>
+  </view>
+  <view slot="body" class='modal-body'>
+    <button type="primary" style="background:#fff;color:#009933;border:6rpx solid #009933;opacity:1;height:250rpx;line-height:240rpx;" open-type="share" class="b-t">💚点我分享到微信群！</button>
+  </view>
+</share-modal>
+<template is="nav" />
+<view class="con">
+  <view class="title">
+    <view class="m-title">求购:</view>
+    <view class="txt"> {{good.title}} </view>
+  </view>
+  <view class="ad">
+    <ad unit-id="adunit-6d77b30123c84608"></ad>
+  </view>
+  <view class="describe">
+    <view class="m-title">求购详情: </view>
+    <view class="txt" style="color: #999;"> {{good.content}} </view>
+  </view>
+  <swiper wx:if="{{good.thumb.length>50||good.thumb1.length>50||good.thumb2.length>50}}" class="tupian" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:if="{{good.thumb.length<100&good.thumb.length>50}}">
+      <swiper-item>
+        <image src="{{good.thumb}}" class="slide-image" mode="aspectFit" data-name="{{good.thumb}}" data-hi="{{good.thumb}}" data-nam="{{good.thumb1}}" data-nm="{{good.thumb2}}" bindtap="aaa" />
+      </swiper-item>
+    </block>
+    <block wx:if="{{good.thumb1.length<100&good.thumb1.length>50}}">
+      <swiper-item>
+        <image src="{{good.thumb1}}" class="slide-image" mode="aspectFit" data-name="{{good.thumb1}}" data-hi="{{good.thumb}}" data-nam="{{good.thumb1}}" data-nm="{{good.thumb2}}" bindtap="aaa" />
+      </swiper-item>
+    </block>
+    <block wx:if="{{good.thumb2.length<100&good.thumb2.length>50}}">
+
+      <swiper-item>
+        <image src="{{good.thumb2}}" class="slide-image" mode="aspectFit" data-name="{{good.thumb2}}" data-hi="{{good.thumb}}" data-nam="{{good.thumb1}}" data-nm="{{good.thumb2}}" bindtap="aaa" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="address">地址：{{good.address}}</view>
+  <view class="address">采购商：{{good.company}}</view>
+
+  <view class="information">
+    <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可查看联系方式和联系他！</button>
+    <view wx:if="{{!sys && good.status==3||!storage}}" class="contect">
+      <button class="btn-t" type="primary" bindtap="tishi" data-name="{{storage}}">查看联系方式</button>
+    </view>
+    <view wx:else>
+      <navigator url="/pages/mingpian/pages/mpxq/xq?scene={{good.userid}}" class="mingpian">
+        <text>☎点此查看他名片</text>
+      </navigator>
+    </view>
+
+    <button wx:if="{{!sys && good.status==3||!storage}}" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="tishi" data-name="{{storage}}" class="btn-c">
+      联系他</button>
+    <navigator wx:else url="/pages/buy/pages/buyInquiry/buyInquiry?uid={{storage}}&itemid={{itemid}}&title={{good.title}}&username={{good.username}}">
+      <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="primary" class="btn-c"> 联系他</button>
+    </navigator>
+    <button open-type="share" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"  class="btn-b" >转发到微信群</button>
+  </view>
+</view>
+<template is="miniProgram" />
+<view class="c"> © 2018 本衣网络</view>

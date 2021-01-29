@@ -1,0 +1,47 @@
+<!--pages/pay/pay.wxml-->
+<view class="body">
+  <navigator open-type="switchTab" url="/pages/tabBar/home/home">
+    <image class="home" src="/image/homeHL.png" />
+  </navigator>
+  <view class="title">加入本衣VIP，您将获得</view>
+  <view class="content">注：以下权益在
+    <text class="fz">服装批发采购小程序</text>与
+    <text class="fz" style="width:90rpx">本衣网</text>同步拥有</view>
+  <view class="mintitle">产品信息优先展示</view>
+  <view class="content">VIP产品信息将优先展示，这里每天有上万精准服装客户浏览您的信息，大大提升您的推广效率，促进交易。</view>
+  <image mode="aspectFit" src="{{img}}" />
+  <view class="mintitle">诚信VIP专属标识</view>
+  <view class="content">诚信VIP专属标识，更快赢得买家信任，助您快速成功交易。</view>
+  <image mode="aspectFit" src="{{img2}}" />
+  <view class="mintitle">获得全网曝光</view>
+  <view class="content">升级VIP服务，获得全网（包括服装批发采购小程序与网站）曝光，扩大您的生意圈，助您做大做强。</view>
+  <image class="vip" mode="aspectFit" src="{{img3}}" />
+  <view style="margin-top:-66rpx;">
+    <view class="mintitle">特别提醒</view>
+    <view class="content">升级后您将拥有：</view>
+    <view class="two" style="background-color:#ff9933">每天将有来自本衣网络平台上万个精准客户浏览您的产品信息</view>
+    <view class="two">在众多竞争对手当中率先赢得客户的信任</view>
+    <view class="two" style="background-color:#3399ff">强大精准的曝光量，让您获得更多的询价</view>
+    <view class="content">同时，您将获得：</view>
+    <view class="two" style="background-color:#aaaaaa">不定期把您的产品供应信息，直接推送给实力雄厚的服装商场采购商</view>
+    <view class="two" style="background-color:#aaaaaa">一个顶级的服装生意交流的圈子</view>
+    <view style="margin-top:60rpx;color:#888888;margin-left:22rpx;">2800元/年
+      <image class="img"  src="/image/vip.1.png" />
+    </view>
+    <form name='pushMsgFm' report-submit bindsubmit="pay">
+      <input type="hidden" name="openid" value="{{openid}}" style="display:none" />
+      <input type="hidden" name="money" value="2800" style="display:none" />
+      <input type="hidden" name="userid" value="{{storage}}" style="display:none" />
+      <input type="hidden" name="username" value="{{username}}" style="display:none" />
+      <input type="hidden" name="address" value="{{information['address']}}" style="display:none" />
+      <input type="hidden" name="totime" value="{{information['totime']}}" style="display:none" />
+      <input type="hidden" name="ty" value="1" style="display:none" />
+      <view class="xieyi">点击确定，即表示已阅读并同意<navigator style="display:inline" url="/pages/pay/pages/xieyi/xieyi">vip协议</navigator>
+      </view>
+      <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可确定！</button>
+      <button wx:if="{{storage}}" class="btn-area"  formType="submit">确定</button>
+      <button wx:else class="btn-area" bindtap="tishi">确定</button>
+    </form>
+    <view style="height:100rpx"></view>
+  </view>
+</view>

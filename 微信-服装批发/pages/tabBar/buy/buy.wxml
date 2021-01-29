@@ -1,0 +1,49 @@
+<!--商品goods-->
+<image src="/image/banner2.jpg" class="banner" style='width: {{windowWidth}}px;' />
+<view class="ad">
+  <ad unit-id="adunit-028826762891cd13"></ad>
+</view>
+<button class="share" open-type="share">
+  <image class="sh" src="/image/share.png" />
+</button>
+<navigator class="by" open-type="reLaunch" url="/pages/tabBar/mybuy/mybuy?r=1">
+  <button class='by-btn'>发布求购</button>
+  <view class="opacity-pic2"></view>
+  <view class='opacity-text2'>看视频解锁发布</view>
+  <image src='/image/lock.png' class='lock2'></image>
+</navigator>
+<view class="goods">
+  <view style="display:{{style}};position:fixed">
+    <scroll-view bindscroll='scroll' style="height:500px; width:{{windowWidth}}px" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad">
+      <view class="goods-box" wx:for="{{goodslist}}" wx:key="" data-id="{{item.itemid}}">
+        <navigator url="/pages/buy/pages/qgxq/qgxq?itemid={{item.itemid}}&username={{username}}">
+          <view class="title">
+            <view class="text-ico">💰</view>
+            <text class="gds-title">{{item.title}}  </text>
+          </view>
+          <view class="introduce">
+            <view class="text-ico"></view>
+            <text class="gds-title" style="margin-left:34rpx;font-size:23rpx">{{item.introduce}}  </text>
+          </view>
+          <view class="fabu">
+            <view class="space"></view>
+            <view class="date">{{item.editdate}}</view>
+            <view class="arr">></view>
+          </view>
+        </navigator>
+        <navigator class='shade' wx:if="{{index==0 || index ==1 || index == 4 || index == 5 }}" url="/pages/buy/pages/qgxq/qgxq?itemid={{item.itemid}}&username={{username}}&r=1">
+          <view class="opacity-pic"></view>
+          <view class='opacity-text'>看视频解锁查看</view>
+          <image src='/image/lock.png' class='lock'></image>
+        </navigator>
+      </view>
+    </scroll-view>
+    <view class="more">
+      <text class="more-title">{{moreText}}</text>
+    </view>
+  </view>
+</view>
+<view style="display:{{reply}};text-align:center;padding-top:50%;color:#00cc66;font-size:50rpx;" bindtap="onLoad">
+  哎哟～网络不好，
+  <view class="reply">点击重新加载...</view>
+</view>

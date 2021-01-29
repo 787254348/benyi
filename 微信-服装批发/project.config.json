@@ -1,0 +1,65 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.1",
+	"appid": "wx78d67b2f2e81ffea",
+	"projectname": "%E6%9C%8D%E8%A3%85",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "求购信息",
+					"pathName": "pages/tabBar/buy/buy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人",
+					"pathName": "pages/tabBar/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发供应",
+					"pathName": "pages/tabBar/ksfb/ksfb",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "名片",
+					"pathName": "pages/mingpian/pages/mpj/mpj",
+					"scene": null
+				}
+			]
+		}
+	}
+}

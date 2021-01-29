@@ -1,0 +1,62 @@
+<form bindsubmit="formSubmit" report-submit>
+  <view class="con">
+    <block wx:for="{{ss}}" wx:for-index="k" wx:key="*this">
+      <input type="hidden" name="imgUrl{{k}}" value="{{ss[k]}}" style="display:none;" />
+    </block>
+    <input type="hidden" name="uid" value="{{storage}}" style="display:none;" />
+    <input type="hidden" name="groupid" value="{{groupid}}" style="display:none;" />
+    <input type="hidden" name="openid" value="{{openid}}" style="display:none;" />
+    <input type="hidden" name="username" value="{{username}}" style="display:none;" />
+    <input type="hidden" name="num" value="{{num}}" style="display:none;" />
+    <input type="hidden" name="province" value="{{province}}" style="display:none;" />
+    <input type="hidden" name="address" value="{{province}}{{city}}{{district}}" style="display:none;" />
+    <view class="section">
+      <picker name="cateId" bindchange="bindPickerChange" value="{{cateIdArray[index]}}" range="{{array}}">
+        <view class="picker leimu">
+          类别: {{array[index]}}
+        </view>
+        <view class="arr1">></view>
+      </picker>
+    </view> 
+    <view class="leimu">
+      <view class="titl">标题:</view>
+      <textarea class="qian tit" name="title" maxlength="18" placeholder-style="font-size:28rpx;" placeholder="必须含关键词如：衬衣/毛衣，否则采购商搜索不到您,也会被删除！（标题字数18个字以内）" />
+    </view>
+    <view class="leimu price">
+      <view class="jiage">价格</view>
+      <view class="bitian">(批发价)：</view>
+      <input class="qian num" maxlength="6" type="digit" name="price" />
+      <text class="text">元</text>
+      <view class="section choose">
+        <picker name="unit" bindchange="bindPickerChange1" value="{{array1[array1index]}}" range="{{array1}}">
+          <view class="danwei">
+            <view class="choose1">单位:</view>{{array1[array1index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="leimu contect">
+      <view>联系方式：</view>
+      <input class="qian tel" maxlength="11" type="number" name="telephone" placeholder-style="font-size:28rpx;" placeholder="请填写十一位手机号码" />
+    </view>
+    <view class="leimu">
+      <view class="detail">商品详情：</view>
+      <textarea class='te-limit' name="content" maxlength="-1" placeholder="建议从别处复制粘贴过来哦，字数越多越详细产品权重越高，询单越多（越多买家找到你）。每天只能发三条信息！" />
+    </view>
+    <view style="padding-left:5%">
+      <block class="tupain" wx:for="{{a}}" wx:for-index="k" wx:key="*this">
+        <image class="img" src="{{a[k]}}" />
+        <view class="delete" plain="true" bindtap="delete1" data-name="{{k}}" style="border:none"></view>
+      </block>
+      <button class="btn"  bindtap="chooseimage">+</button>
+    </view>
+    <button wx:if="{{!storage}}" class="shouquan" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点此授权,方可发布！</button>
+    <button class="btn-area" formType="submit" >确认发布</button>
+    <view style="text-align:center;margin-top:10rpx">发布成功
+      <text style="color:#009933;font-weight:800;">8</text>分钟后首页可看到</view>
+  </view>
+</form>
+<view class="ad">
+    <ad unit-id="adunit-b3a4a82a4369488d"></ad> 
+</view>
+<view class="c"> © 2018 本衣网络</view>

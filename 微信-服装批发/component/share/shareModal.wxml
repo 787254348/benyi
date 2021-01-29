@@ -1,0 +1,13 @@
+<!--component/share/shareModal.wxml-->
+<view animation="{{animationData}}" hidden="{{!isShow}}" class='modal'>
+  <view data-type="mask" catchtap='hideModal' class='modal-mask'></view>
+  <view class='modal-icon' catchtap='hideModal'>
+    <slot name="icon"></slot>
+  </view>
+  <view class='modal-layer  modal-layer-radius {{modalSize == "sm" ? " modal-layer-sm" : " modal-layer-md" }} '>
+    <!-- 内容区域 -->
+    <view class='modal-body'>
+      <slot name="body"></slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<view class="page home">
+  <view style="height:70rpx;background-color:#feeede;">
+    <form bindsubmit="formSubmit">
+      <view class="solo">本衣</view>
+      <view class="rsearch">
+        <input name="rsearch" style="width:88%" value="" placeholder='女装' />
+      </view>
+      <button class="b" formType="submit">
+        <icon type="search" size="20" />
+      </button>
+    </form> 
+    <navigator class="by" open-type="reLaunch" url="/pages/tabBar/ksfb/ksfb?r=1" >
+      <button class="by-btn">发布信息 </button>
+      <view class="opacity-pic"></view>
+      <view class='opacity-text'>看视频解锁发布</view>
+      <image src='/image/lock.png' class='lock'></image>
+    </navigator>
+  </view>
+  <image src="/image/banner1.jpg" class="banner" />
+  <view class="categroy">
+    <navigator open-type="switchTab" url="/pages/tabBar/home/home" class="light" style="color:#009900;">首页</navigator>
+    <view wx:for="{{nav}}" bindtap="nav" data-cid="{{item.cid}}">{{item.name}}</view>
+  </view>
+  <!--商品goods-->
+  <view style="display:{{style}};">
+    <view class="goods">
+      <scroll-view bindscroll="scroll" style="height: {{clientHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" upper-threshold="0">
+        <view class="goods-box" wx:for="{{goodslist}}" wx:key="" data-id="{{item.itemid}}">
+          <navigator url="/pages/sell/pages/good/good?itemid={{item.itemid}}&username={{item.username}}&title={{item.title}}">
+            <image class="gds-img" src="{{arr[index]?item.thumb:''}}" />
+            <text wx:if="{{item.honor_id==1}}" class="gds-title" style="padding-left:106rpx;">{{item.title}}  </text>
+            <text wx:else class="gds-title" style="padding-left:34rpx;">{{item.title}}  </text>
+            <view wx:if="{{item.price==0.00}}" class="money">
+              <text class="price"> 面议</text>
+            </view>
+            <view wx:else class="money">
+              <text style="font-size:28rpx;">¥ : {{item.price}}</text>
+            </view>
+          </navigator>
+          <navigator wx:if="{{item.honor_id==1}}" url="/pages/honor/pages/myhonor/myhonor?username={{item.username}}&company={{item.company}}&groupid={{item.groupid}}&honor_id={{item.honor_id}}" class="text-ico">已认证</navigator>
+          <navigator url="/pages/pay/pages/payment/payment">
+            <image wx:if="{{item.groupid>6&&item.topid==1}}" style="margin-right:130rpx;width:32rpx;display:{{block}}" class="vip" src="/image/cft.png" />
+            <image wx:if="{{item.groupid<7&&item.topid==1}}" style="margin-right:34rpx;width:32rpx;display:{{block}}" class="vip" src="/image/cft.png" />
+          </navigator>
+          <navigator url="/pages/pay/pages/pay/pay">
+            <image wx:if="{{item.groupid>6}}" class="vip" src="/image/vip.1.png" />
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="more">
+      <text class="more-title" style="display:{{moreText}}">亲，暂时只能显示到此，如需查看更多请前往本衣网。</text>
+    </view>
+  </view>
+  <view style="display:{{reply}};text-align:center;padding-top:30%;color:#00cc66;font-size:50rpx;" bindtap="onLoad">
+    哎哟～网络不好，
+    <view class="reply">点击重新加载...</view>
+  </view>
+</view>
